@@ -10,7 +10,8 @@ INSERT INTO score_configs (id,
 		max_value,
 		description)
 SELECT
-	gen_random_uuid () AS id,
+	-- gen_random_uuid () AS id,
+	(EXTRACT(EPOCH FROM CURRENT_TIMESTAMP)::bigint * 1000000000 + random() * 1000000000)::bigint AS id,
 	s.project_id,
 	'manual-score',
 	'NUMERIC',
