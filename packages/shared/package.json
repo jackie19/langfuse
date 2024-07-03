@@ -31,7 +31,7 @@
     "dev": "tsc --watch",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
-    "db:migrate": "DISABLE_ERD=false dotenv -e ../../.env -- npx prisma migrate dev",
+    "db:migrate": "dotenv -e ../../.env -- npx prisma migrate dev",
     "db:push": "DISABLE_ERD=false dotenv -e ../../.env -- npx prisma db push",
     "db:reset": "dotenv -e ../../.env npx -- prisma migrate reset",
     "db:deploy": "dotenv -e ../../.env npx -- prisma migrate deploy",
@@ -65,8 +65,6 @@
     "zod-to-json-schema": "^3.22.5"
   },
   "devDependencies": {
-    "@repo/eslint-config": "*",
-    "@repo/typescript-config": "*",
     "@types/lodash": "^4.17.5",
     "@types/node": "^20.11.29",
     "@types/nodemailer": "^6.4.15",
