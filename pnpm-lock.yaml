@@ -244,6 +244,8 @@ importers:
         specifier: ^1.5.3
         version: 1.5.3(@types/node@20.11.29)
 
+  packages/shared/tmp/prisma-client-for-langfuse-linux: {}
+
   web:
     dependencies:
       '@anthropic-ai/tokenizer':
