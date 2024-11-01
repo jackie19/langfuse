@@ -4,6 +4,13 @@
 generator client {
     provider        = "prisma-client-js"
     previewFeatures = ["tracing", "views", "relationJoins", "metrics"]
+
+    // windows
+    // output          = "../node_modules/prisma-client-for-langfuse-x64"
+
+    // linux
+    binaryTargets   = ["native", "rhel-openssl-1.0.x"]
+    output          = "../node_modules/prisma-client-for-langfuse-linux"
 }
 
 datasource db {
@@ -327,7 +334,7 @@ view TraceView {
 }
 
 // Update ObservationView below when making changes to this model!
-// traceId is optional only due to timing during data injestion 
+// traceId is optional only due to timing during data injestion
 // (traceId is not necessarily known at the time of observation creation)
 model Observation {
     id                  String           @id @default(cuid())
@@ -835,7 +842,7 @@ model JobConfiguration {
     filter          Json
     targetObject    String         @map("target_object")
     variableMapping Json           @map("variable_mapping")
-    sampling        Decimal // ratio of jobs that are executed for sampling (0..1)  
+    sampling        Decimal // ratio of jobs that are executed for sampling (0..1)
     delay           Int // delay in milliseconds
     JobExecution    JobExecution[]
 
