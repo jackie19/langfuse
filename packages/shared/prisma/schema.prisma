@@ -4,6 +4,13 @@
 generator client {
   provider        = "prisma-client-js"
   previewFeatures = ["tracing", "views", "relationJoins", "metrics"]
+
+  // windows
+  // output          = "../node_modules/prisma-client-for-langfuse-x64"
+
+  // linux
+  binaryTargets   = ["native", "rhel-openssl-1.0.x"]
+  output          = "../node_modules/prisma-client-for-langfuse-linux"
 }
 
 datasource db {
@@ -343,7 +350,7 @@ view TraceView {
 }
 
 // Update ObservationView below when making changes to this model!
-// traceId is optional only due to timing during data injestion 
+// traceId is optional only due to timing during data injestion
 // (traceId is not necessarily known at the time of observation creation)
 model Observation {
   id                  String           @id @default(cuid())
