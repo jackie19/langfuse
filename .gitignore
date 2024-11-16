@@ -63,3 +63,5 @@ node_modules
 **/.turbo/*
 .yarn
 .turbo
+/packages/shared/src/generated
+/packages/shared/tmp
