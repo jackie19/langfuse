@@ -3,14 +3,14 @@
 
 generator client {
     provider        = "prisma-client-js"
-    previewFeatures = ["tracing", "views", "relationJoins", "metrics"]
+    previewFeatures = ["tracing", "views", "relationJoins", "metrics", "driverAdapters"]
 
     // windows
-    // output          = "../node_modules/prisma-client-for-langfuse-x64"
+    output          = "../node_modules/prisma-client-for-langfuse-x64"
 
     // linux
-    binaryTargets   = ["native", "rhel-openssl-1.0.x"]
-    output          = "../node_modules/prisma-client-for-langfuse-linux"
+    // binaryTargets   = ["rhel-openssl-1.1.x"]
+    // output          = "../node_modules/prisma-client-for-langfuse-linux"
 }
 
 datasource db {

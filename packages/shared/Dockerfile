@@ -14,7 +14,11 @@ FROM base AS pruner
 
 WORKDIR /app
 COPY . .
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
 RUN npm config set registry https://registry.npmmirror.com
-RUN npm install
+RUN corepack prepare pnpm@9.5.0 --activate
+RUN pnpm install
 RUN npx prisma generate
 
