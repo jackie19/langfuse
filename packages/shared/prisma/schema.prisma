@@ -9,7 +9,7 @@ generator client {
   // output          = "../node_modules/prisma-client-for-langfuse-x64"
 
   // linux
-  binaryTargets   = ["native", "rhel-openssl-1.0.x"]
+  binaryTargets   = ["rhel-openssl-1.1.x"]
   output          = "../node_modules/prisma-client-for-langfuse-linux"
 }
 
