@@ -16,9 +16,11 @@ WORKDIR /app
 COPY . .
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
-RUN corepack enable
-RUN corepack prepare pnpm@9.5.0 --activate
+ENV PUPPETEER_SKIP_DOWNLOAD=0
+# RUN corepack enable
+#RUN corepack prepare pnpm@9.5.0 --activate
 RUN npm config set registry https://registry.npmmirror.com
-RUN pnpm install
+RUN npm install pnpm@9.5.0 -g
+RUN pnpm install --registry=https://registry.npmmirror.com
 RUN npx prisma generate
 

@@ -6,7 +6,7 @@
 # cd /d/work/fork/langfuse/packages/shared/
 # sh build.sh
 
-rm -rf ./tmp
+rm -rf ./tmp/*
 
  docker build -t shared .
  docker create --name shared-ins shared
